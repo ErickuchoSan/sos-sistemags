@@ -1,0 +1,217 @@
+.about {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+/* Image Side */
+.about-image-wrapper {
+    position: relative;
+}
+
+.about-image-container {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.about-image {
+    width: 100%;
+    height: 500px;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.about-image-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.about-image-logo {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-image-slogan {
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.about-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(212, 175, 55, 0.2) 0%, transparent 50%);
+}
+
+/* Floating Badge */
+.about-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 140px;
+    height: 140px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg), var(--shadow-glow-gold);
+    animation: float 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+.about-badge-icon {
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+.about-badge-text {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--bg-dark);
+    text-align: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+/* Content Side */
+.about-content {
+    padding-left: 24px;
+}
+
+.about-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.about-title {
+    margin-bottom: 24px;
+}
+
+.about-text {
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+}
+
+.about-text:last-of-type {
+    margin-bottom: 32px;
+}
+
+/* Features List */
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.about-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.about-feature:hover {
+    border-color: var(--primary-blue-light);
+    transform: translateX(8px);
+}
+
+.about-feature-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.about-feature-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: white;
+}
+
+.about-feature-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* CTA */
+.about-cta {
+    display: flex;
+    gap: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .about-content {
+        padding-left: 0;
+    }
+
+    .about-image {
+        height: 400px;
+    }
+
+    .about-badge {
+        bottom: -10px;
+        right: 20px;
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cta {
+        flex-direction: column;
+    }
+
+    .about-cta .btn {
+        width: 100%;
+    }
+}
