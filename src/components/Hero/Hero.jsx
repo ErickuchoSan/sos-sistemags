@@ -1,4 +1,29 @@
+import { useCountUp } from '../../hooks/useCountUp';
 import './Hero.css';
+
+// Particle component for floating effects
+function Particle({ index }) {
+    const style = {
+        '--tx': `${(Math.random() - 0.5) * 200}px`,
+        '--ty': `${-300 - Math.random() * 200}px`,
+        left: `${10 + Math.random() * 80}%`,
+        bottom: `${-20}px`,
+        animationDelay: `${index * 0.8}s`,
+        animationDuration: `${4 + Math.random() * 3}s`,
+    };
+    return <div className="hero-particle" style={style} />;
+}
+
+// Animated stat component
+function AnimatedStat({ value, suffix, label }) {
+    const [ref, displayValue] = useCountUp(value, 2000, suffix);
+    return (
+        <div className="hero-stat" ref={ref}>
+            <div className="hero-stat-value">{displayValue}</div>
+            <div className="hero-stat-label">{label}</div>
+        </div>
+    );
+}
 
 export default function Hero() {
     return (
@@ -9,6 +34,12 @@ export default function Hero() {
                 <div className="hero-gradient-orb hero-orb-2"></div>
                 <div className="hero-gradient-orb hero-orb-3"></div>
                 <div className="hero-grid"></div>
+                {/* Floating Particles */}
+                <div className="hero-particles">
+                    {[...Array(12)].map((_, i) => (
+                        <Particle key={i} index={i} />
+                    ))}
+                </div>
             </div>
 
             {/* Content */}
@@ -34,7 +65,7 @@ export default function Hero() {
                 </p>
 
                 <div className="hero-cta">
-                    <a href="#servicios" className="btn btn-primary">
+                    <a href="#servicios" className="btn btn-primary btn-glow">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M12 5v14M5 12l7 7 7-7" />
                         </svg>
@@ -48,20 +79,11 @@ export default function Hero() {
                     </a>
                 </div>
 
-                {/* Stats */}
+                {/* Animated Stats */}
                 <div className="hero-stats">
-                    <div className="hero-stat">
-                        <div className="hero-stat-value">10+</div>
-                        <div className="hero-stat-label">Años de Experiencia</div>
-                    </div>
-                    <div className="hero-stat">
-                        <div className="hero-stat-value">1000+</div>
-                        <div className="hero-stat-label">Clientes Satisfechos</div>
-                    </div>
-                    <div className="hero-stat">
-                        <div className="hero-stat-value">100%</div>
-                        <div className="hero-stat-label">Servicio Garantizado</div>
-                    </div>
+                    <AnimatedStat value={10} suffix="+" label="Años de Experiencia" />
+                    <AnimatedStat value={1000} suffix="+" label="Clientes Satisfechos" />
+                    <AnimatedStat value={100} suffix="%" label="Servicio Garantizado" />
                 </div>
             </div>
 
@@ -73,3 +95,4 @@ export default function Hero() {
         </section>
     );
 }
+

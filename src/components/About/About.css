@@ -73,8 +73,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-lg), var(--shadow-glow-gold);
-    animation: float 4s ease-in-out infinite;
+    box-shadow:
+        var(--shadow-lg),
+        var(--shadow-glow-gold),
+        0 0 40px rgba(212, 175, 55, 0.4);
+    animation: bouncePulse 3s ease-in-out infinite;
     z-index: 2;
 }
 

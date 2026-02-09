@@ -52,7 +52,7 @@
     gap: 24px;
 }
 
-/* Service Card */
+/* Service Card - Premium 3D Effects */
 .service-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -60,10 +60,13 @@
     padding: 32px;
     position: relative;
     overflow: hidden;
-    transition: all var(--transition-base);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
+/* Animated border glow effect */
 .service-card::before {
     content: '';
     position: absolute;
@@ -71,24 +74,45 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--gradient-primary);
+    background: linear-gradient(90deg, var(--primary-blue), var(--gold), var(--primary-blue-light), var(--gold), var(--primary-blue));
+    background-size: 300% 100%;
     opacity: 0;
     transition: opacity var(--transition-base);
+    animation: borderGlow 3s linear infinite;
+}
+
+/* Inner glow effect */
+.service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(37, 99, 235, 0.3);
-    box-shadow: var(--shadow-lg), var(--shadow-glow-blue);
+    transform: translateY(-12px) rotateX(5deg) rotateY(-2deg);
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow:
+        var(--shadow-lg),
+        var(--shadow-glow-blue),
+        0 30px 60px -20px rgba(0, 0, 0, 0.5);
 }
 
 .service-card:hover::before {
     opacity: 1;
 }
 
+.service-card:hover::after {
+    opacity: 1;
+}
+
 .service-card:hover .service-icon {
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(5deg);
     background: var(--gradient-primary);
+    animation: glowPulse 1.5s ease-in-out infinite;
 }
 
 .service-card:hover .service-icon svg {
@@ -105,7 +129,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    transition: all var(--transition-base);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .service-icon svg {

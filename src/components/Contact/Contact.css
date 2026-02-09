@@ -127,7 +127,8 @@
 .social-link:hover {
     background: var(--gradient-primary);
     border-color: var(--primary-blue-light);
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: var(--shadow-glow-blue);
 }
 
 .social-link svg {
@@ -199,7 +200,11 @@
 .form-textarea:focus {
     outline: none;
     border-color: var(--primary-blue-light);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.15),
+        0 0 20px rgba(37, 99, 235, 0.2),
+        var(--shadow-glow-blue);
+    transform: translateY(-2px);
 }
 
 .form-input::placeholder,
