@@ -24,8 +24,11 @@
 .about-image {
     width: 100%;
     height: 500px;
+    background-color: #ffffff;
+    /* Fallback for contain */
     background-image: url(/about-bg-tech.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     display: flex;
     align-items: center;
