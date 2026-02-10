@@ -22,7 +22,7 @@ export default function Header() {
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
             <div className="header-container">
                 <a href="#inicio" className="logo">
-                    <div className="logo-icon">SOS</div>
+                    <img src="/Logo-SOS.jpeg" alt="SOS SistemAGS" className="logo-img" />
                     <div className="logo-text">
                         <span className="logo-name">SistemAGS</span>
                         <span className="logo-slogan">SOMOS LA SOLUCIÓN</span>

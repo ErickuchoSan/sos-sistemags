@@ -57,8 +57,7 @@ export default function About() {
                         <div className="about-image-container">
                             <div className="about-image">
                                 <div className="about-image-content">
-                                    <div className="about-image-logo">SOS</div>
-                                    <div className="about-image-slogan">SistemAGS</div>
+                                    <img src="/Logo-SOS.jpeg" alt="SOS SistemAGS" className="about-image-logo-img" />
                                 </div>
                             </div>
                         </div>

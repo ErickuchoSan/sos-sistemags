@@ -30,7 +30,7 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="footer-brand">
                         <div className="footer-logo">
-                            <div className="footer-logo-icon">SOS</div>
+                            <img src="/Logo-SOS.jpeg" alt="SOS SistemAGS" className="footer-logo-img" />
                             <div className="footer-logo-text">
                                 <span className="footer-logo-name">SistemAGS</span>
                                 <span className="footer-logo-slogan">SOMOS LA SOLUCIÓN</span>
