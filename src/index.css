@@ -83,6 +83,19 @@ html {
 body {
   font-family: var(--font-primary);
   background-color: var(--bg-dark);
+  background-image:
+    /* Subtle circuit grid across entire site */
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 119px,
+      rgba(37, 99, 235, 0.03) 119px,
+      rgba(37, 99, 235, 0.03) 120px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 119px,
+      rgba(37, 99, 235, 0.03) 119px,
+      rgba(37, 99, 235, 0.03) 120px);
+  background-size: 120px 120px;
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;

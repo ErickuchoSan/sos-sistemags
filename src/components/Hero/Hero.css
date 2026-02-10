@@ -13,18 +13,58 @@
     position: absolute;
     inset: 0;
     z-index: 0;
+    background-color: #050a18;
 }
 
+/* Circuit board pattern background */
 .hero-bg::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-    animation: float 20s ease-in-out infinite;
+    inset: 0;
+    background:
+        /* Circuit trace lines - horizontal */
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 79px,
+            rgba(37, 99, 235, 0.07) 79px,
+            rgba(37, 99, 235, 0.07) 80px),
+        /* Circuit trace lines - vertical */
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 79px,
+            rgba(37, 99, 235, 0.07) 79px,
+            rgba(37, 99, 235, 0.07) 80px),
+        /* Circuit node dots */
+        radial-gradient(circle 2px at 80px 80px, rgba(37, 99, 235, 0.2) 2px, transparent 2px),
+        radial-gradient(circle 2px at 160px 160px, rgba(212, 175, 55, 0.18) 2px, transparent 2px),
+        radial-gradient(circle 1.5px at 240px 80px, rgba(37, 99, 235, 0.15) 1.5px, transparent 1.5px),
+        radial-gradient(circle 1.5px at 80px 240px, rgba(212, 175, 55, 0.12) 1.5px, transparent 1.5px),
+        /* Diagonal traces */
+        repeating-linear-gradient(45deg,
+            transparent,
+            transparent 158px,
+            rgba(37, 99, 235, 0.04) 158px,
+            rgba(37, 99, 235, 0.04) 160px),
+        repeating-linear-gradient(-45deg,
+            transparent,
+            transparent 238px,
+            rgba(212, 175, 55, 0.03) 238px,
+            rgba(212, 175, 55, 0.03) 240px);
+    background-size: 80px 80px, 80px 80px, 160px 160px, 320px 320px, 240px 240px, 80px 240px, 160px 160px, 240px 240px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 75%);
+    animation: pulse 10s ease-in-out infinite;
+}
+
+/* Glow overlays for depth */
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+        radial-gradient(ellipse at 50% 80%, rgba(37, 99, 235, 0.06) 0%, transparent 50%);
 }
 
 .hero-gradient-orb {
