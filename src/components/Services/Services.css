@@ -86,7 +86,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 60%);
+    background: radial-gradient(circle at 50% 0%, rgba(43, 76, 126, 0.15) 0%, transparent 60%);
     opacity: 0;
     transition: opacity var(--transition-base);
     pointer-events: none;
@@ -94,7 +94,7 @@
 
 .service-card:hover {
     transform: translateY(-12px) rotateX(5deg) rotateY(-2deg);
-    border-color: rgba(37, 99, 235, 0.4);
+    border-color: rgba(43, 76, 126, 0.4);
     box-shadow:
         var(--shadow-lg),
         var(--shadow-glow-blue),
