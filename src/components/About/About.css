@@ -24,11 +24,14 @@
 .about-image {
     width: 100%;
     height: 500px;
-    background: var(--gradient-primary);
+    background-image: url(/about-bg-tech.png);
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1);
 }
 
 .about-image-content {
