@@ -56,7 +56,7 @@ export default function Contact() {
         e.preventDefault();
         // Aquí iría la lógica para enviar el formulario
         const whatsappMessage = `Hola! Me interesa un servicio.\n\nNombre: ${formData.name}\nEmail: ${formData.email}\nTeléfono: ${formData.phone}\nServicio: ${formData.service}\nMensaje: ${formData.message}`;
-        window.open(`https://wa.me/524491234567?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+        window.open(`https://wa.me/524499281035?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
     };
 
     return (
@@ -113,7 +113,7 @@ export default function Contact() {
                                 </svg>
                             </a>
                             <a
-                                href="https://wa.me/524491234567"
+                                href="https://wa.me/524499281035"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="social-link"
@@ -218,6 +218,9 @@ export default function Contact() {
                                         <option value="celulares">Celulares / Smartphones</option>
                                         <option value="tablets">Tablets / iPads</option>
                                         <option value="mac">Mac's / Apple</option>
+                                        <option value="consolas">Consolas de Videojuegos</option>
+                                        <option value="software">Software y Formateo</option>
+                                        <option value="redes">Redes e Instalaciones</option>
                                         <option value="datos">Recuperación de Datos</option>
                                         <option value="vigilancia">Video-vigilancia</option>
                                         <option value="otro">Otro</option>

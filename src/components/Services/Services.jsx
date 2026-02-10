@@ -12,7 +12,7 @@ const services = [
             </svg>
         ),
         title: 'Equipos de Cómputo',
-        description: 'Venta, actualización y reparación de equipos de cómputo de escritorio y laptops. Trabajamos con todas las marcas.',
+        description: 'Venta, reparación, armado y mantenimiento de laptops, escritorios y todo en uno. Transferencia de archivos de PC a PC.',
     },
     {
         id: 2,
@@ -29,16 +29,10 @@ const services = [
         id: 3,
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
-                <rect x="9" y="9" width="6" height="6" />
-                <line x1="9" y1="1" x2="9" y2="4" />
-                <line x1="15" y1="1" x2="15" y2="4" />
-                <line x1="9" y1="20" x2="9" y2="23" />
-                <line x1="15" y1="20" x2="15" y2="23" />
-                <line x1="20" y1="9" x2="23" y2="9" />
-                <line x1="20" y1="14" x2="23" y2="14" />
-                <line x1="1" y1="9" x2="4" y2="9" />
-                <line x1="1" y1="14" x2="4" y2="14" />
+                <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+                <line x1="8" y1="2" x2="8" y2="4" />
+                <line x1="16" y1="2" x2="16" y2="4" />
             </svg>
         ),
         title: 'Tablets e iPads',
@@ -48,16 +42,60 @@ const services = [
         id: 4,
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                <line x1="12" y1="19" x2="12" y2="22" />
+                <path d="M18 3a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z" />
+                <path d="M6 3a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z" />
+                <path d="M18 13a7 7 0 0 1-12 0" />
+                <rect x="2" y="3" width="20" height="14" rx="3" ry="3" />
+                <line x1="12" y1="17" x2="12" y2="22" />
             </svg>
         ),
-        title: 'Mac\'s y Apple',
-        description: 'Expertos en productos Apple. Reparación y mantenimiento de MacBooks, iMacs y todos los productos del ecosistema Apple.',
+        title: "Mac's y Apple",
+        description: 'Reparación y mantenimiento de MacBooks, iMacs y todos los productos del ecosistema Apple.',
     },
     {
         id: 5,
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="6" width="20" height="12" rx="4" ry="4" />
+                <circle cx="9" cy="12" r="2" />
+                <circle cx="15" cy="10" r="1" />
+                <circle cx="17" cy="12" r="1" />
+                <circle cx="15" cy="14" r="1" />
+                <circle cx="13" cy="12" r="1" />
+            </svg>
+        ),
+        title: 'Consolas de Videojuegos',
+        description: 'Reparación de Xbox, PlayStation y Nintendo. Mantenimiento preventivo y correctivo de todas las consolas.',
+    },
+    {
+        id: 6,
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <path d="M8 21h8" />
+                <path d="M12 17v4" />
+                <path d="M7 8l3 3-3 3" />
+                <line x1="13" y1="14" x2="17" y2="14" />
+            </svg>
+        ),
+        title: 'Software y Formateo',
+        description: 'Formateos, instalación de antivirus, sistemas operativos, programas y restauración de sistema.',
+    },
+    {
+        id: 7,
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="1" y="6" width="22" height="12" rx="2" />
+                <path d="M1 10h22" />
+                <path d="M7 6V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
+                <circle cx="12" cy="14" r="2" />
+            </svg>
+        ),
+        title: 'Redes e Instalaciones',
+        description: 'Instalación de redes, configuración de cyber cafés y ensamble de workstations y PC gamer.',
+    },
+    {
+        id: 8,
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
@@ -66,10 +104,10 @@ const services = [
             </svg>
         ),
         title: 'Recuperación de Datos',
-        description: 'Recuperación de información borrada accidentalmente o debido a problemas con el equipo. Sujeto a diagnóstico.',
+        description: 'Recuperación de información, respaldo de datos y transferencia de archivos. Sujeto a diagnóstico.',
     },
     {
-        id: 6,
+        id: 9,
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
@@ -77,7 +115,7 @@ const services = [
             </svg>
         ),
         title: 'Video-vigilancia',
-        description: 'Instalación de sistemas de cámaras de seguridad y video-vigilancia para hogares y negocios.',
+        description: 'Venta e instalación de cámaras de seguridad y sistemas de video-vigilancia para hogares y negocios.',
     },
 ];
 
