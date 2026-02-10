@@ -93,6 +93,131 @@
     height: 4px;
 }
 
+/* Floating Tech Icons */
+.hero-tech-icons {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.tech-icon {
+    position: absolute;
+    stroke: rgba(37, 99, 235, 0.12);
+    opacity: 0.6;
+    animation: float 8s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.15));
+}
+
+/* Laptop - top left */
+.tech-icon-1 {
+    width: 55px;
+    height: 55px;
+    top: 12%;
+    left: 8%;
+    animation: float 7s ease-in-out infinite;
+    stroke: rgba(37, 99, 235, 0.15);
+}
+
+/* Phone - top right */
+.tech-icon-2 {
+    width: 35px;
+    height: 35px;
+    top: 18%;
+    right: 12%;
+    animation: float 9s ease-in-out infinite;
+    animation-delay: -2s;
+    stroke: rgba(212, 175, 55, 0.15);
+}
+
+/* CPU Chip - center left */
+.tech-icon-3 {
+    width: 50px;
+    height: 50px;
+    top: 40%;
+    left: 5%;
+    animation: float 8s ease-in-out infinite, spinGlow 20s linear infinite;
+    animation-delay: -4s;
+    stroke: rgba(37, 99, 235, 0.18);
+}
+
+/* Wrench - bottom left */
+.tech-icon-4 {
+    width: 40px;
+    height: 40px;
+    bottom: 25%;
+    left: 12%;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -1s;
+    stroke: rgba(212, 175, 55, 0.18);
+}
+
+/* Wifi - top center-right */
+.tech-icon-5 {
+    width: 42px;
+    height: 42px;
+    top: 8%;
+    right: 30%;
+    animation: float 10s ease-in-out infinite;
+    animation-delay: -3s;
+    stroke: rgba(37, 99, 235, 0.12);
+}
+
+/* Shield - center right */
+.tech-icon-6 {
+    width: 38px;
+    height: 38px;
+    top: 50%;
+    right: 8%;
+    animation: float 7s ease-in-out infinite;
+    animation-delay: -5s;
+    stroke: rgba(212, 175, 55, 0.14);
+}
+
+/* Gamepad - bottom right */
+.tech-icon-7 {
+    width: 48px;
+    height: 48px;
+    bottom: 18%;
+    right: 15%;
+    animation: float 9s ease-in-out infinite;
+    animation-delay: -2s;
+    stroke: rgba(37, 99, 235, 0.15);
+}
+
+/* Camera - top center-left */
+.tech-icon-8 {
+    width: 36px;
+    height: 36px;
+    top: 15%;
+    left: 28%;
+    animation: float 8s ease-in-out infinite;
+    animation-delay: -6s;
+    stroke: rgba(37, 99, 235, 0.12);
+}
+
+/* Hard Drive - bottom center */
+.tech-icon-9 {
+    width: 44px;
+    height: 44px;
+    bottom: 30%;
+    left: 35%;
+    animation: float 11s ease-in-out infinite;
+    animation-delay: -4s;
+    stroke: rgba(212, 175, 55, 0.12);
+}
+
+/* Gear - middle right */
+.tech-icon-10 {
+    width: 52px;
+    height: 52px;
+    top: 30%;
+    right: 5%;
+    animation: float 7s ease-in-out infinite, spinGlow 15s linear infinite;
+    animation-delay: -1s;
+    stroke: rgba(37, 99, 235, 0.14);
+}
+
 /* Grid Pattern */
 .hero-grid {
     position: absolute;
@@ -264,6 +389,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .hero-tech-icons {
+        display: none;
+    }
+
     .hero-content {
         padding: 0 16px;
     }
