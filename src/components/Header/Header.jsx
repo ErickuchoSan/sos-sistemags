@@ -46,6 +46,14 @@ export default function Header() {
                 />
 
                 <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+                    {/* Logo en menú móvil */}
+                    <div className="nav-header">
+                        <img src="/Logo-SOS.jpeg" alt="SOS SistemAGS" className="nav-logo" />
+                        <span className="nav-brand">SistemAGS</span>
+                    </div>
+
+                    <div className="nav-divider"></div>
+
                     {navLinks.map((link) => (
                         <a
                             key={link.href}
@@ -56,6 +64,9 @@ export default function Header() {
                             {link.label}
                         </a>
                     ))}
+
+                    <div className="nav-divider"></div>
+
                     <div className="nav-cta">
                         <a href="#contacto" className="btn btn-gold" onClick={handleNavClick}>
                             ¡Contáctanos!

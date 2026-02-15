@@ -152,44 +152,99 @@
         position: fixed;
         top: 0;
         right: -100%;
-        width: 80%;
-        max-width: 400px;
+        width: 85%;
+        max-width: 320px;
         height: 100vh;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        gap: 8px;
-        padding: 100px 40px 40px;
-        background: #f8f9fa;
-        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+        gap: 4px;
+        padding: 24px;
+        background: #ffffff;
+        background-image: url(/hero-bg-tech.png);
+        background-size: cover;
+        background-position: center;
+        box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
         transition: right var(--transition-base);
         overflow-y: auto;
         z-index: 1000;
+    }
+
+    .nav::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: -1;
     }
 
     .nav.open {
         right: 0;
     }
 
+    /* Logo y header del menú móvil */
+    .nav-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 0;
+        margin-bottom: 8px;
+    }
+
+    .nav-logo {
+        width: 50px;
+        height: 50px;
+        border-radius: var(--radius-md);
+        object-fit: cover;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-brand {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--primary-blue);
+    }
+
+    /* Línea decorativa dorada */
+    .nav-divider {
+        width: 60%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        margin: 12px 0;
+        border-radius: 2px;
+    }
+
     .nav-link {
-        font-size: 1.1rem;
-        padding: 16px 24px;
+        font-size: 1.05rem;
+        font-weight: 500;
+        padding: 14px 24px;
         width: 100%;
         text-align: center;
         border-radius: var(--radius-md);
+        color: var(--primary-blue);
+        transition: all var(--transition-fast);
     }
 
     .nav-link:hover {
         background: rgba(43, 76, 126, 0.08);
+        color: var(--gold-dark);
+        transform: translateX(4px);
     }
 
     .nav-cta {
         margin-left: 0;
-        margin-top: 24px;
+        margin-top: 16px;
         width: 100%;
     }
 
     .nav-cta .btn {
         width: 100%;
     }
+}
+
+/* Ocultar elementos del menú móvil en desktop */
+.nav-header,
+.nav-divider {
+    display: none;
 }
