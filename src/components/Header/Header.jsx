@@ -4,11 +4,11 @@ import { useTheme } from '../../hooks/useTheme';
 import './Header.css';
 
 const navLinks = [
-    { href: '#inicio', label: 'Inicio' },
-    { href: '#servicios', label: 'Servicios' },
-    { href: '#nosotros', label: 'Nosotros' },
-    { href: '#por-que', label: '¿Por qué elegirnos?' },
-    { href: '#contacto', label: 'Contacto' },
+    { href: '#inicio', label: 'Inicio', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+    { href: '#servicios', label: 'Servicios', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z' },
+    { href: '#nosotros', label: 'Nosotros', icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z' },
+    { href: '#por-que', label: '¿Por qué elegirnos?', icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' },
+    { href: '#contacto', label: 'Contacto', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
 ];
 
 // Sun icon for light mode
@@ -82,31 +82,47 @@ export default function Header() {
                 />
 
                 <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
-                    {/* Logo en menú móvil */}
-                    <div className="nav-header">
+                    {/* Botón cerrar */}
+                    <button className="nav-close" onClick={() => setIsMenuOpen(false)} aria-label="Cerrar menú">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+
+                    {/* Logo central */}
+                    <div className="nav-brand-section">
                         <img src="/Logo-SOS.jpeg" alt="SOS SistemAGS" className="nav-logo" />
-                        <span className="nav-brand">SistemAGS</span>
+                        <span className="nav-brand-name">SistemAGS</span>
+                        <span className="nav-brand-slogan">SOMOS LA SOLUCIÓN</span>
                     </div>
 
-                    <div className="nav-divider"></div>
+                    {/* Links con iconos */}
+                    <div className="nav-links">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                className="nav-link"
+                                onClick={handleNavClick}
+                            >
+                                <svg className="nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d={link.icon} />
+                                </svg>
+                                <span>{link.label}</span>
+                            </a>
+                        ))}
+                    </div>
 
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className="nav-link"
-                            onClick={handleNavClick}
+                    {/* Footer del menú */}
+                    <div className="nav-footer">
+                        <button
+                            className="nav-theme-toggle"
+                            onClick={toggleTheme}
                         >
-                            {link.label}
-                        </a>
-                    ))}
-
-                    <div className="nav-divider"></div>
-
-                    <div className="nav-cta">
-                        <a href="#contacto" className="btn btn-gold" onClick={handleNavClick}>
-                            ¡Contáctanos!
-                        </a>
+                            {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+                            <span>{theme === 'light' ? 'Modo oscuro' : 'Modo claro'}</span>
+                        </button>
                     </div>
                 </nav>
             </div>
