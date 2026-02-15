@@ -24,7 +24,7 @@
 .about-image {
     width: 100%;
     height: 500px;
-    background-color: #ffffff;
+    background-color: var(--hero-bg);
     /* Fallback for contain */
     background-image: url(/about-bg-tech.png);
     background-size: contain;
@@ -35,6 +35,7 @@
     justify-content: center;
     position: relative;
     box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-base);
 }
 
 .about-image-content {

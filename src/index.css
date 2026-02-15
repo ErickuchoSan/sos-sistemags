@@ -16,34 +16,6 @@
   --gold-light: #E8C547;
   --gold-dark: #B8960B;
 
-  /* Background Colors - Light Theme */
-  --bg-dark: #f5f5f5;
-  --bg-darker: #eaeaea;
-  --bg-card: rgba(43, 76, 126, 0.06);
-  --bg-card-hover: rgba(43, 76, 126, 0.12);
-
-  /* Text Colors */
-  --text-primary: #1a2332;
-  --text-secondary: #4a5568;
-  --text-muted: #8896a6;
-
-  /* Glassmorphism - Light */
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(43, 76, 126, 0.12);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
-  --gradient-gold: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
-  --gradient-hero: linear-gradient(180deg, rgba(245, 245, 245, 0) 0%, var(--bg-dark) 100%);
-
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-  --shadow-glow-blue: 0 0 40px rgba(43, 76, 126, 0.15);
-  --shadow-glow-gold: 0 0 40px rgba(212, 175, 55, 0.2);
-
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Outfit', 'Inter', sans-serif;
@@ -65,6 +37,93 @@
 }
 
 /* ================================
+   Light Theme (Default)
+   ================================ */
+:root,
+[data-theme="light"] {
+  /* Background Colors */
+  --bg-dark: #f5f5f5;
+  --bg-darker: #eaeaea;
+  --bg-card: rgba(43, 76, 126, 0.06);
+  --bg-card-hover: rgba(43, 76, 126, 0.12);
+
+  /* Text Colors */
+  --text-primary: #1a2332;
+  --text-secondary: #4a5568;
+  --text-muted: #8896a6;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(43, 76, 126, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
+  --gradient-hero: linear-gradient(180deg, rgba(245, 245, 245, 0) 0%, var(--bg-dark) 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-glow-blue: 0 0 40px rgba(43, 76, 126, 0.15);
+  --shadow-glow-gold: 0 0 40px rgba(212, 175, 55, 0.2);
+
+  /* Grid pattern opacity */
+  --grid-opacity: 0.03;
+
+  /* Hero background */
+  --hero-bg: #ffffff;
+  --hero-pattern-opacity: 0.15;
+
+  /* Mobile menu */
+  --mobile-menu-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* ================================
+   Dark Theme
+   ================================ */
+[data-theme="dark"] {
+  /* Background Colors */
+  --bg-dark: #0a0f1a;
+  --bg-darker: #060b14;
+  --bg-card: rgba(212, 175, 55, 0.08);
+  --bg-card-hover: rgba(212, 175, 55, 0.15);
+
+  /* Text Colors */
+  --text-primary: #f0f4f8;
+  --text-secondary: #a8b5c4;
+  --text-muted: #6b7a8c;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(10, 15, 26, 0.85);
+  --glass-border: rgba(212, 175, 55, 0.15);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary-blue-light) 0%, var(--primary-blue) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  --gradient-hero: linear-gradient(180deg, rgba(10, 15, 26, 0) 0%, var(--bg-dark) 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-blue: 0 0 40px rgba(43, 76, 126, 0.3);
+  --shadow-glow-gold: 0 0 40px rgba(212, 175, 55, 0.3);
+
+  /* Grid pattern opacity */
+  --grid-opacity: 0.06;
+
+  /* Hero background */
+  --hero-bg: #0a0f1a;
+  --hero-pattern-opacity: 0.25;
+
+  /* Mobile menu */
+  --mobile-menu-bg: rgba(10, 15, 26, 0.98);
+}
+
+/* ================================
    Reset & Base Styles
    ================================ */
 *,
@@ -83,24 +142,34 @@ html {
 body {
   font-family: var(--font-primary);
   background-color: var(--bg-dark);
-  background-image:
-    /* Subtle circuit grid across entire site */
-    repeating-linear-gradient(0deg,
-      transparent,
-      transparent 119px,
-      rgba(43, 76, 126, 0.03) 119px,
-      rgba(43, 76, 126, 0.03) 120px),
-    repeating-linear-gradient(90deg,
-      transparent,
-      transparent 119px,
-      rgba(43, 76, 126, 0.03) 119px,
-      rgba(43, 76, 126, 0.03) 120px);
-  background-size: 120px 120px;
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* Subtle circuit grid pattern overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 119px,
+      var(--primary-blue) 119px,
+      var(--primary-blue) 120px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 119px,
+      var(--primary-blue) 119px,
+      var(--primary-blue) 120px);
+  background-size: 120px 120px;
+  opacity: var(--grid-opacity);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* ================================
