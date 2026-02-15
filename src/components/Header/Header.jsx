@@ -39,6 +39,12 @@ export default function Header() {
                     <span></span>
                 </button>
 
+                {/* Mobile overlay */}
+                <div
+                    className={`nav-overlay ${isMenuOpen ? 'active' : ''}`}
+                    onClick={() => setIsMenuOpen(false)}
+                />
+
                 <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
                     {navLinks.map((link) => (
                         <a
