@@ -173,6 +173,13 @@
         z-index: 1001;
     }
 
+    /* Ocultar hamburguesa cuando menú está abierto */
+    .nav.open ~ .header-actions .menu-toggle,
+    .menu-toggle.active {
+        opacity: 0;
+        pointer-events: none;
+    }
+
     /* Fullscreen Menu */
     .nav {
         position: fixed;
