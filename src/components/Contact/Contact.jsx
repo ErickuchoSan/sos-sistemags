@@ -208,7 +208,7 @@ export default function Contact() {
                                     <select
                                         id="service"
                                         name="service"
-                                        className="form-input"
+                                        className="form-input form-select"
                                         value={formData.service}
                                         onChange={handleChange}
                                         required
