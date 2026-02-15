@@ -53,36 +53,19 @@ export default function Header() {
                     </div>
                 </a>
 
-                <div className="header-actions">
-                    {/* Theme toggle */}
-                    <button
-                        className="theme-toggle"
-                        onClick={toggleTheme}
-                        aria-label={`Cambiar a modo ${theme === 'light' ? 'oscuro' : 'claro'}`}
-                    >
-                        {theme === 'light' ? <MoonIcon /> : <SunIcon />}
-                    </button>
-
-                    {/* Mobile menu toggle */}
-                    <button
-                        className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-
-                {/* Mobile overlay */}
-                <div
-                    className={`nav-overlay ${isMenuOpen ? 'active' : ''}`}
-                    onClick={() => setIsMenuOpen(false)}
-                />
+                {/* Mobile menu toggle */}
+                <button
+                    className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label="Toggle menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
                 <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
-                    {/* Botón cerrar */}
+                    {/* Botón cerrar (solo móvil) */}
                     <button className="nav-close" onClick={() => setIsMenuOpen(false)} aria-label="Cerrar menú">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <line x1="18" y1="6" x2="6" y2="18" />
@@ -90,14 +73,14 @@ export default function Header() {
                         </svg>
                     </button>
 
-                    {/* Logo central */}
+                    {/* Logo central (solo móvil) */}
                     <div className="nav-brand-section">
                         <img src="/Logo-SOS.jpeg" alt="SOS SistemAGS" className="nav-logo" />
                         <span className="nav-brand-name">SistemAGS</span>
                         <span className="nav-brand-slogan">SOMOS LA SOLUCIÓN</span>
                     </div>
 
-                    {/* Links con iconos */}
+                    {/* Links - Desktop: inline, Mobile: con iconos */}
                     <div className="nav-links">
                         {navLinks.map((link) => (
                             <a
@@ -114,7 +97,21 @@ export default function Header() {
                         ))}
                     </div>
 
-                    {/* Footer del menú */}
+                    {/* CTA + Theme toggle (desktop) */}
+                    <div className="nav-actions">
+                        <a href="#contacto" className="btn btn-gold nav-cta-btn">
+                            ¡Contáctanos!
+                        </a>
+                        <button
+                            className="theme-toggle"
+                            onClick={toggleTheme}
+                            aria-label={`Cambiar a modo ${theme === 'light' ? 'oscuro' : 'claro'}`}
+                        >
+                            {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+                        </button>
+                    </div>
+
+                    {/* Footer del menú (solo móvil) */}
                     <div className="nav-footer">
                         <button
                             className="nav-theme-toggle"
