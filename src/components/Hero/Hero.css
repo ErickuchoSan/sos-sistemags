@@ -400,6 +400,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+    }
+
     .hero-tech-icons {
         display: none;
     }
@@ -471,7 +475,7 @@
 
 @media (max-width: 480px) {
     .hero {
-        padding-top: 70px;
+        padding-top: 90px;
     }
 
     .hero-title {
