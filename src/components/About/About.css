@@ -1,6 +1,33 @@
 .about {
     position: relative;
     overflow: hidden;
+    background: var(--bg-dark);
+}
+
+/* Efecto de transición suave */
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(180deg, var(--bg-darker) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Línea decorativa */
+.about::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-blue-light), transparent);
+    z-index: 2;
 }
 
 .about-grid {

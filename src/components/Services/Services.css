@@ -4,14 +4,31 @@
     overflow: hidden;
 }
 
+/* Efecto de transición suave desde hero */
 .services::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    height: 150px;
+    background: linear-gradient(180deg, var(--hero-bg) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Línea decorativa dorada */
+.services::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 3px;
+    background: var(--gradient-gold);
+    border-radius: 0 0 4px 4px;
+    z-index: 2;
 }
 
 .services-header {

@@ -4,14 +4,29 @@
     position: relative;
 }
 
+/* Efecto de transición suave */
 .footer::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    height: 100px;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Línea dorada superior */
+.footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gradient-gold);
+    border-radius: 0 0 4px 4px;
 }
 
 .footer-grid {
