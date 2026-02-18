@@ -179,20 +179,19 @@
 
 /* Mobile Styles */
 @media (max-width: 900px) {
+    /* Ocultar menú hamburguesa - ahora usamos bottom nav */
     .menu-toggle {
-        display: flex;
-        z-index: 1001;
-    }
-
-    /* Ocultar hamburguesa cuando menú está abierto */
-    .menu-toggle.active {
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    /* Ocultar nav-actions en móvil */
-    .nav-actions {
         display: none;
+    }
+
+    /* Ocultar nav completo en móvil */
+    .nav {
+        display: none;
+    }
+
+    /* Header simplificado en móvil */
+    .header-container {
+        justify-content: center;
     }
 
     /* Fullscreen Menu */
